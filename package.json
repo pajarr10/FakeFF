@@ -1,0 +1,16 @@
+{
+  "name": "fekepep",
+  "version": "1.0.0",
+  "description": "FEKEPEP — Dark minimal web app with deep crimson theme",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^24.43.1"
+  },
+  "author": "pajar",
+  "license": "MIT"
+}
