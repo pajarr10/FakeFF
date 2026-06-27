@@ -8,42 +8,44 @@ Dark minimal web app with **Deep Crimson** theme — built with Node.js, Express
 - **FakeFF Duo** — Generate a duo profile image from two usernames
 - **Profile** — About the creator
 
-## Quick Start
+## Quick Start (Local)
 
 ```bash
-# 1. Install dependencies
 npm install
-
-# 2. Start the server
 npm start
-
-# 3. Open in browser
 # → http://localhost:8080
 ```
+
+## Deploy to Vercel
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+Or just connect your GitHub repo to Vercel — it will auto-detect `vercel.json`.
 
 ## Project Structure
 
 ```
 fekepep/
-├── server.js          # Express backend + API proxy
+├── vercel.json            # Vercel routing config
+├── server.js              # Express (local dev)
 ├── package.json
-├── README.md
+├── api/
+│   ├── fakeff-solo.js     # Serverless: proxy FakeFF Solo API
+│   └── fakeff-duo.js      # Serverless: proxy FakeFF Duo API
 └── public/
-    ├── index.html     # Single-page app (hash routing)
-    ├── style.css      # Dark minimal + crimson theme
-    └── script.js      # Client-side logic
+    ├── index.html          # SPA frontend
+    ├── style.css           # Dark crimson theme
+    └── script.js           # Client-side logic
 ```
 
 ## Tech Stack
 
-- **Backend:** Node.js + Express
+- **Backend:** Node.js + Express (local) / Vercel Serverless (production)
 - **Frontend:** Vanilla HTML, CSS, JavaScript
 - **No frameworks:** No React, Vue, Next.js, etc.
-
-## Port
-
-Default: `8080` (configurable via `PORT` environment variable)
-
-```bash
-PORT=3000 npm start
-```
